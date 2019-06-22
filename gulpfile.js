@@ -4,16 +4,7 @@ const sass = require('gulp-sass');
 const browserSync  = require('browser-sync').create();
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
-
-// gulp.task('sass', () => { return gulp.src('app/scss/**/*.scss')
-// .pipe(sass())
-// .pipe(gulp.dest('app/css')); });
-
-// gulp.task('watch', () => { 
-//     gulp.watch('app/scss/**/*.scss', gulp.series('sass')); 
-// });
-
-
+const cleanCSS = require('gulp-clean-css');
 
 // compile scss into css
 function style(){
@@ -23,6 +14,8 @@ function style(){
     .pipe(sass()).on('error', sass.logError)
     // 3. Add prefixes to code
     .pipe(postcss([autoprefixer]))
+    // Minify the CSS
+    .pipe(cleanCSS())
     // 4. Where do I save the complied CSS?
     .pipe(gulp.dest('app/css'))
     // 5. Stream changes to all browsers
