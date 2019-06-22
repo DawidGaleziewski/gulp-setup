@@ -2,6 +2,7 @@
 const gulp = require('gulp'); 
 const sass = require('gulp-sass');
 const browserSync  = require('browser-sync').create();
+const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 
 // gulp.task('sass', () => { return gulp.src('app/scss/**/*.scss')
@@ -20,9 +21,11 @@ function style(){
     return gulp.src('app/scss/**/*.scss')
     // 2. Compile sass file
     .pipe(sass()).on('error', sass.logError)
-    // 3. Where do I save the complied CSS?
+    // 3. Add prefixes to code
+    .pipe(postcss([autoprefixer]))
+    // 4. Where do I save the complied CSS?
     .pipe(gulp.dest('app/css'))
-    // 4. Stream changes to all browsers
+    // 5. Stream changes to all browsers
     .pipe(browserSync.stream())
 }
 
