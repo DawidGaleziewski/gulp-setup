@@ -12,6 +12,9 @@
     // javascript
     const concat = require('gulp-concat');
 
+    // Uglify does not support es6 to look into this
+    // const uglify = require('gulp-uglify');
+
 
 // compile scss into css
 function style(){
@@ -35,11 +38,16 @@ function javascript(){
     const preJSFiles = ['test-1.js', 'test-2.js'].map((fileName => {
         return `${preJSDirectory}${fileName}`;
     }));
-    const jsOutput = './app/js';
 
     // 1 where to take js files from?
     return gulp.src(preJSFiles)
+
+    // How the file should be named?
     .pipe(concat('main.js'))
+
+    // Uglify does not support es6 - to look into this
+    // .pipe(uglify())
+    // Where output should be saved?
     .pipe(gulp.dest('./app/js'))
 }
 
@@ -61,7 +69,7 @@ function watch(){
     gulp.watch('./*.html').on('change', browserSync.reload);
 
     // Watch for pre-javaScript changes, apply changes to the files on save
-    gulp.watch('app/pre-js/**/*.js', javascript)
+    gulp.watch('app/pre-js/**/*.js', javascript).on('change', browserSync.reload);
 
 }
 
