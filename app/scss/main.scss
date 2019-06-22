@@ -1,0 +1,209 @@
+/**
+*
+* 
+* main.css - Main Theme Styles
+*
+* 
+* --------------------------------
+* ***** TABLE OF CONNTENTS:  *****
+* --------------------------------
+* 
+* + 1.0 - Settings and helpers
+* 		- 1.1 - @import(s) (including Google Fonts)
+*		- 1.2 - Fonts
+*       	* 1.2.1 - Font Awesome
+* 
+* 
+* + 2.0 - Frameworks
+* 		
+*
+* 
+* + 3.0 - Base styles
+* 		- 3.1 - Normalize
+* 		- 3.2 - Base styles
+* 
+*
+* 
+* + 4.0 - Layout
+* 		- 4.1 - Header styles
+* 		- 4.2 - Main styles
+* 		- 4.3 - Nav styles
+* 		- 4.4 - Sidebar styles
+*		- 4.5 - Slider styles
+* 		- 4.6 - Footer styles
+*
+* 
+* + 5.0 - Modules
+* 		- 5.1 - Buttons
+* 		- 5.2 - Dividers
+* 		- 5.3 - Forms
+*
+* 
+* + 6.0 - Theme
+*
+* --------------------------------
+* ** End of  TABLE OF CONNTENTS ** 
+* --------------------------------
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+* 
+**/
+/*==================================================
+=            1.0 - Settings and helpers            =
+==================================================*/
+	@import "utilities/imports";
+/***/
+/*==========  1.2 - Fonts  ==========*/	
+	// @import "fonts/font-awesome";
+	@import "utilities/settings";
+/*-----  End of 1.0 - Settings and helpers  ------*/
+/**
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ * 
+ *
+ **/
+/*========================================
+=            2.0 - Frameworks            =
+========================================*/
+
+/*-----  End of 2.0 - Frameworks  ------*/
+/**
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ * 
+ *
+ **/
+/*=========================================
+=            3.0 - Base styles            =
+=========================================*/
+	@import "base/normalize";
+	@import "base/base";
+/*-----  End of 3.0 - Base styles  ------*/
+/**
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ * 
+ *
+ **/
+/*=====================================
+=            4.0 - Layout            =
+=====================================*/
+	@import "layout/header";
+	@import "layout/container";
+	@import "layout/nav";
+	@import "layout/slider";
+	@import "layout/footer";
+/*-----  End of 4.0 - Layouts  ------*/
+/**
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ * 
+ *
+ **/
+/*=====================================
+=            5.0 - Modules            =
+=====================================*/
+	@import "modules/buttons";
+	@import "modules/forms";
+/*-----  End of 5.0 - Modules  ------*/
+/**
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ * 
+ *
+ **/
+/*===================================
+=            6.0 - Theme            =
+===================================*/
+
+/*-----  End of 6.0 - Theme  ------*/
+
+
+
+body {
+	display: flex;
+	background-color: red;
+}
