@@ -2,6 +2,7 @@
     // general
     const gulp = require('gulp'); 
     const browserSync  = require('browser-sync').create();
+    const sourcemaps = require('gulp-sourcemaps');
 
     // css
     const sass = require('gulp-sass');
@@ -21,11 +22,13 @@ function style(){
     // 1. Where is scss file?
     return gulp.src('app/scss/**/*.scss')
     // 2. Compile sass file
+    .pipe(sourcemaps.init())
     .pipe(sass()).on('error', sass.logError)
     // 3. Add prefixes to code
     .pipe(postcss([autoprefixer]))
     // Minify the CSS
     .pipe(cleanCSS())
+    .pipe(sourcemaps.write())
     // 4. Where do I save the complied CSS?
     .pipe(gulp.dest('app/css'))
     // 5. Stream changes to all browsers
@@ -39,13 +42,13 @@ function javascript(){
         return `${preJSDirectory}${fileName}`;
     }));
 
-    // 1 where to take js files from?
+    // 1. where to take js files from?
     return gulp.src(preJSFiles)
 
-    // How the file should be named?
+    // 2. How the file should be named?
     .pipe(concat('main.js'))
 
-    // Uglify does not support es6 - to look into this
+    // Uglify does not support es6 - to look into this - learn more on babel
     // .pipe(uglify())
     // Where output should be saved?
     .pipe(gulp.dest('./app/js'))
