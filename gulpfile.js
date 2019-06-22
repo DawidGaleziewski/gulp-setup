@@ -18,8 +18,8 @@ const autoprefixer = require('autoprefixer');
 function style(){
     // 1. Where is scss file?
     return gulp.src('app/scss/**/*.scss')
-    // 2. Compile file
-    .pipe(sass())
+    // 2. Compile sass file
+    .pipe(sass()).on('error', sass.logError)
     // 3. Where do I save the complied CSS?
     .pipe(gulp.dest('app/css'))
     // 4. Stream changes to all browsers
